@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عرض الصورة والنص</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+      .container {
+  position: relative; /* تمكين التموضع النسبي للعنصر الحاوي */
+  height: 100vh; /* تعيين ارتفاع الحاوية 100% من ارتفاع النافذة */
+  width: 100vw; /* تعيين عرض الحاوية 100% من عرض النافذة */
+  overflow: hidden; /* إخفاء أي محتوى يتجاوز حدود الحاوية */
+}
+
+.container img {
+  position: absolute; /* تمكين التموضع المطلق للصورة */
+  top: 0; /* تعيين موضع الجزء العلوي للصورة في أعلى الحاوية */
+  left: 0; /* تعيين موضع الجزء الأيسر للصورة في أقصى يسار الحاوية */
+  width: 100%; /* تعيين عرض الصورة 100% من عرض الحاوية */
+  height: 100%; /* تعيين ارتفاع الصورة 100% من ارتفاع الحاوية */
+  object-fit: cover; /* تغطية الحاوية بالصورة مع الحفاظ على نسبة العرض إلى الارتفاع */
+}
+
+.text-content {
+  position: absolute; /* تمكين التموضع المطلق للنص */
+  top: 50%; /* تعيين موضع الجزء العلوي للنص في منتصف الحاوية عموديًا */
+  left: 50%; /* تعيين موضع الجزء الأيسر للنص في منتصف الحاوية أفقيًا */
+  transform: translate(-50%, -50%); /* تحريك النص إلى موضعه الصحيح */
+  color: white; /* تعيين لون النص إلى أبيض */
+  text-align: center; /* محاذاة النص في المنتصف */
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="٢٠٢٤٠٤١٤_٢٣٥١٤٣٣٤٨.jpg" alt="صورة">
+    <div class="text-content">
+      <h1>عنوان النص</h1>
+      <p>هذا مثال لنص يظهر فوق الصورة.</p>
+    </div>
+  </div>
+</body>
+</html>
+
+.categores {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.categores h2 {
+  margin-bottom: 20px;
+}
+
+.categore {
+  display: inline-block;
+  width: 300px;
+  margin: 4px;
+  padding: 0px;
+  border: 1px solid #f77cec;
+  text-align: left;
+}
+
+.categore img {
+  padding: 20px 30px;
+  width: 250px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 1px;
+  border-radius: 20%;
+}
+
+.categore h3 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.categore p {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.categore {
+  border-radius: 10px;
+}
+
+.categore a {
+  display: block;
+  width: 100px;
+  height: 30px;
+  padding: 2px;
+  margin: 10px 30%;
+  border: beige;
+  text-align: center;
+  border-radius: 20px;
+  border: 1px solid black;
+  background-color: #ad4280;
+  color: white;
+}
+<div class="categores">
+  <h2>Categoryes</h2>
+  <div class="categore">
+    <img src="./img/1.jpg" alt="categore" />
+    <h3>Double Freme Glasses</h3>
+  </div>
+  <div class="categore">
+    <img src="./img/2.jpg" alt="categore" />
+
+    <h3>Sunglasses</h3>
+  </div>
+  <div class="categore">
+    <img src="./img/3.jpg" alt="categore" />
+
+    <h3>Safety Glasses</h3>
+  </div>
+  <div class="categore">
+    <img src="./img/1.jpg" alt="categore" />
+    <h3>Medical Glasses</h3>
+  </div>
+</div>

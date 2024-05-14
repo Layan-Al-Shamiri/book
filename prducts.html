@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./assets/css/style.css">
+  <title>products</title>
+  <style>
+      
+    #products {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+    }
+    h1 {
+        margin-top: 20px;
+        text-align: center;
+      }
+    .product {
+        margin: 8px;
+display: inline-block;
+width: 300px;
+
+border: 1px solid rgb(77, 72, 72);
+text-align: left;
+position: relative;
+height: 170px;
+border-radius: 10px;
+overflow: hidden; 
+    }
+    .product img {
+        
+        position: absolute; 
+top: 0;
+left: 0; 
+width: 100%; 
+height: 100%; 
+object-fit: cover;
+        
+      
+      }
+      h2{
+        position: absolute; 
+        top: 90%; 
+        left: 80%; 
+        transform: translate(-50%, -50%); 
+        color:black; 
+        text-align: right;
+      }
+
+    
+      
+     
+      
+      
+    
+    
+</style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="menu_left">
+           
+          <div class="menu_right">
+            <a href="./concat.html" class="btn-contact sm-hidden">تواصل معنا</a>
+            <button onclick="toggleMenu()" class="btn-menubar lg-hidden">
+              
+            </button>
+        </div>
+            <div class="menu-li" >
+                <ul class="menu">
+                  
+                    
+                    <li class="menu_list">
+                        <a href="./quotes.html">الاقتباسات</a>
+                    </li>
+                    <li class="menu_list">
+                      <a href="./about.html">عنا</a>
+                  </li>
+                  <li class="menu_list">
+                    <a href="./task.html"> المهام</a>
+                </li>
+                  <li class="menu_list">
+                    <a href="./index.html">الرئيسية</a>
+                </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="logo">
+          <img src="./img/icon/icon.jpg" alt="">
+         
+        </div>
+        
+    </nav>
+
+   
+
+   <main>
+    <section>
+        <h1>المنتجات</h1>
+    <div id="products">
+        
+    </div>
+    <div class="payment-section">
+        <h1>طرق الدفع</h1>
+        <div class="payment-options">
+            <div class="payment-option">
+                <img src="./img/icon/1-145.jpg" alt="صراف" />
+                <h3>كاش</h3>
+              </div>
+          <div class="payment-option">
+            <img src="./img/icon/Visa-Mastercard-logo-shffaf.com2_.png" alt="فيزا" />
+            <h3>فيزا</h3>
+          </div>
+          <div class="payment-option">
+            <img src="./img/icon/2560px-MasterCard_Logo.svg.png" alt="مستر كارد" />
+            <h3>مستر كارد</h3>
+          </div>
+        </div>
+      </div>
+   </main>
+   
+    
+    <script src="script.js"></script>
+    
+    <script>
+        // استخراج قيمة التصنيف من عنوان URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+
+        // عرض التصنيف في عنوان الصفحة
+        document.title = `صفحة الات - ${category}`;
+
+        // عرض الات التابعة للتصنيف المحدد
+        fetchProducts(category);
+
+        function fetchProducts(category) {
+            // هنا يمكنك استدعاء API لاسترداد الات المتعلقة بالتصنيف
+            // يمكنك استخدام fetch أو أي أسلوب آخر لاستدعاء البيانات
+
+            // لهذا المثال، سنستخدم بيانات ثابتة
+            let productsData = [];
+
+            if (category === 'تصنيف 1') {
+                // الات المتعلقة بتصنيف 1
+                productsData = [
+                    { name: ' 2.1', price: '1500$', image: './img/cop/IMG-20240504-WA0018.jpg' },
+                    { name: ' 2.2', price: '1000$', image: './img/cop/IMG-20240504-WA0019.jpg' },
+                    { name: ' 2.3', price: '1300$', image: './img//cop/IMG-20240504-WA0020.jpg' },
+                    { name: ' 2.3', price: '600$', image: './img/cop/IMG-20240504-WA0021.jpg' },
+                 
+                ];
+              
+            } else if (category === 'تصنيف 2') {
+                // الات المتعلقة بتصنيف 2
+                productsData = [
+                { name: ' 1.1', price: '300$', image: './img/foa/IMG-20240504-WA0014.jpg' },
+                { name: ' 1.2', price: '6000$', image: './img/foa/IMG-20240504-WA0015.jpg' },
+                { name: ' 1.3', price: '890$', image: './img/foa/IMG-20240504-WA0016.jpg' },
+                { name: ' 2.3', price: '1000$', image: './img/foa/IMG-20240504-WA0017.jpg' }
+                
+            ];
+            }
+            else if (category === 'تصنيف 3') {
+                // الات المتعلقة بتصنيف 2
+                productsData = [
+                    { name: ' 2.1', price: '50$', image: './img/shom/IMG-20240504-WA0010.jpg' },
+                    { name: ' 2.2', price: '70$', image: './img/shom/IMG-20240504-WA0011.jpg' },
+                    { name: ' 2.3', price: '100$', image: './img/shom/IMG-20240504-WA0012.jpg' },
+                    { name: ' 2.3', price: '90$', image: './img/shom/IMG-20240504-WA0013.jpg' }
+                ];
+            } else if (category === 'تصنيف 4') {
+                // الات المتعلقة بتصنيف 2
+                productsData = [
+                    { name: ' 2.1', price: '180$', image: './img/foa/IMG-20240504-WA0014.jpg' },
+                    { name: ' 2.2', price: '40$', image: './img/foa/IMG-20240504-WA0015.jpg' },
+                    { name: ' 2.3', price: '70$', image: './img/foa/IMG-20240504-WA0016.jpg' },
+                    { name: ' 2.3', price: '30$', image: './img/foa/IMG-20240504-WA0017.jpg' }
+                ];
+            }
+            else if (category === 'تصنيف 5') {
+                // الات المتعلقة بتصنيف 2
+                productsData = [
+                    { name: ' 2.1', price: '10$', image: './img/deen/IMG-20240501-WA0060.jpg' },
+                    { name: ' 2.2', price: '50$', image: './img/deen/IMG-20240501-WA0061.jpg' },
+                    { name: ' 2.3', price: '90$', image: './img/deen/IMG-20240501-WA0062.jpg' },
+                    { name: ' 2.3', price: '60$', image: './img/deen/IMG-20240501-WA0063.jpg' },
+                    { name: ' 2.3', price: '80$', image: './img/children/1 (11).jpg' },
+                    { name: ' 2.3', price: '100$', image: './img/children/1 (12).jpg' },
+                    { name: ' 2.3', price: '50$', image: './img/children/1 (13).jpg' },
+                    { name: ' 2.3', price: '10$', image: './img/children/1 (14).jpg' },
+                    { name: ' 2.3', price: '140$', image: './img/children/1 (14).jpg' },
+
+                    
+
+                    { name: ' 2.3', price: '70$', image: './img/th/IMG-20240504-WA0006.jpg' },
+                    { name: ' 2.3', price: '60$', image: './img/th/IMG-20240504-WA0007.jpg' },
+                    { name: ' 2.3', price: '10$', image: './img/th/IMG-20240504-WA0008.jpg' },
+                    { name: ' 2.3', price: '50$', image: './img/th/IMG-20240504-WA0009.jpg' }
+                ];
+            }
+            // عرض الات في الصفحة
+            const productsContainer = document.getElementById('products');
+            productsData.forEach(product => {
+                const productElement = document.createElement('div');
+                productElement.classList.add('product');
+                const imageElement = document.createElement('img');
+                imageElement.src = product.image;
+                imageElement.alt = product.name;
+                productElement.appendChild(imageElement);
+                productElement.innerHTML += '<h3>' + product.name + '</h3>' + '<h2>' + product.price + '</h2>';
+                productsContainer.appendChild(productElement);
+            });
+        }
+    </script>
+</body>
+
+</html>

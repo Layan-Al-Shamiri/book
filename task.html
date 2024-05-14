@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> task</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <style>
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 50vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+    
+    h2 {
+      text-align: center;
+      margin-top: 15px;
+    }
+    
+    .add-task {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    
+    .add-task input[type="text"],
+    .add-task input[type="number"],
+    .add-task input[type="date"],
+    .add-task input[type="submit"] {
+      margin-right: 10px;
+      font-size: 20px;
+
+    }
+    
+    table {
+      border-collapse: collapse;
+      width: 600px;
+      background-color:#e5e5f7;;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      overflow: hidden;
+    
+    }
+    
+    th, td {
+ 
+      font-size: 20px;
+      text-align: left;
+      padding: 12px 15px;
+      font-weight: bold;
+  
+    
+    }
+    
+    th {
+      
+      background-color: #493a3aed;
+      font-weight: bold;
+      font-size: 20px;
+      color: white;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    
+    .completed-checkbox input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+    }
+    
+    .completed-checkbox label {
+      font-size: 20px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+ 
+  <nav class="navbar">
+    <div class="menu_left">
+       
+      <div class="menu_right">
+        <a href="./concat.html" class="btn-contact sm-hidden">تواصل معنا</a>
+        <button onclick="toggleMenu()" class="btn-menubar lg-hidden">
+          
+        </button>
+    </div>
+        <div class="menu-li" >
+            <ul class="menu">
+              
+                
+                <li class="menu_list">
+                    <a href="./quotes.html">الاقتباسات</a>
+                </li>
+                <li class="menu_list">
+                  <a href="./about.html">عنا</a>
+              </li>
+              <li class="menu_list">
+                <a href="./task.html"> المهام</a>
+            </li>
+              <li class="menu_list">
+                <a href="./index.html">الرئيسية</a>
+            </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="logo">
+      <img src="./img/icon/icon.jpg" alt="">
+     
+    </div>
+    
+</nav>
+
+<main>
+  <h1>"القراءة تجعل الإنسان مكانًا أفضل."</h1>
+  <h2>جدول الإنجازات</h2>
+  
+  <div class="add-task">
+    <form id="taskForm">
+      <input type="text" id="taskInput" placeholder="أضف مهمة جديدة" required>
+      <input type="number" id="frequencyInput" placeholder="عدد الأجزاء "required>
+      <input type="date" id="dateInput" required>
+      <input type="submit" value="إضافة">
+    </form>
+  </div>
+  
+  <table id="achievementTable">
+    <tr>
+      <th>الإنجازات</th>
+      <th>عدد المرات</th>
+      <th>التاريخ</th>
+      <th>انتهاء القراءة؟</th>
+    </tr>
+  </table>
+</main>
+
+  <script>
+    var taskForm = document.getElementById("taskForm");
+    var taskInput = document.getElementById("taskInput");
+    var frequencyInput = document.getElementById("frequencyInput");
+    var dateInput = document.getElementById("dateInput");
+    var achievementTable = document.getElementById("achievementTable");
+    
+    function addTask(event) {
+      event.preventDefault();
+      
+      var task = taskInput.value;
+      var frequency = frequencyInput.value;
+      var date = dateInput.value;
+      if (task === "" || frequency === "" || date === "") {
+        return;
+      }
+      
+      var row = achievementTable.insertRow(-1);
+      var taskCell = row.insertCell(0);
+      var frequencyCell = row.insertCell(1);
+      var dateCell = row.insertCell(2);
+      var completedCell = row.insertCell(3);
+      
+      taskCell.innerHTML = task;
+      frequencyCell.innerHTML = frequency;
+      dateCell.innerHTML = date;
+      completedCell.innerHTML = '<div class="completed-checkbox"><input type="checkbox" id="checkbox"><label for="checkbox"></label></div>';
+      
+      taskInput.value = "";
+      frequencyInput.value = "";
+      dateInput.value = "";
+    }
+    
+    taskForm.addEventListener("submit", addTask);
+  </script>
+</body>
+</html>

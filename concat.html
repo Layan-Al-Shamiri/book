@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <title>concst</title>
+   <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+        .container {
+            display: flex;
+            padding-bottom: 30px;
+    justify-content: space-between;
+    align-items: center;
+    height: 90vh;
+    padding-left: 20px;
+    flex-wrap: wrap;
+    flex-direction: row;
+        }
+        
+        .left {
+          flex: 1;
+          padding-top: 5px;
+          width: 200px;
+          text-align: left;
+          padding-right: 20px;
+          border: 1px solid rgb(204, 202, 202);
+          box-shadow: 5px 3px 0 rgba(156, 155, 155, 0.45);
+          border-radius: 5px;
+          
+          border-radius: 10px;
+        }
+        
+        .right {
+
+          flex: 1;
+          text-align: right;
+          padding-right: 15px;
+         
+        }
+        
+        form {
+          width: 250px;
+          margin: 0 auto;
+        }
+        
+        form input {
+          width: 100%;
+          padding: 15px;
+          font-size: 15px;
+          font-weight: bold;
+          margin-bottom: 10px;
+          border-radius: 20px;
+
+        }
+        form label{
+          font-size: 18px;
+          font-weight: bold;
+          color:#493a3aed ;
+        }
+        
+        form button {
+          width: 100%;
+          margin: 10px;
+          padding: 10px;
+          background-color:  #493a3aed;
+          color: white;
+          border: none;
+          border-radius: 10px;
+        }
+        .title{
+            padding: 30px;
+            text-align: center;
+           
+            
+        }
+        .quote img{
+            border-radius: 10px;
+            
+        }
+        .textarea{
+          border-radius: 20px;
+          margin: 5px;
+          padding: 8px;
+          font-size: 15px;
+          font-weight: bold;
+      
+        }
+      </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="menu_left">
+       
+      <div class="menu_right">
+        <a href="./concat.html" class="btn-contact sm-hidden">تواصل معنا</a>
+        <button onclick="toggleMenu()" class="btn-menubar lg-hidden">
+          
+        </button>
+    </div>
+        <div class="menu-li" >
+            <ul class="menu">
+              
+                
+                <li class="menu_list">
+                    <a href="./quotes.html">الاقتباسات</a>
+                </li>
+                <li class="menu_list">
+                  <a href="./about.html">عنا</a>
+              </li>
+              <li class="menu_list">
+                <a href="./task.html"> المهام</a>
+            </li>
+              <li class="menu_list">
+                <a href="./index.html">الرئيسية</a>
+            </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="logo">
+      <img src="./img/icon/icon.jpg" alt="">
+     
+    </div>
+    
+</nav>
+
+    <div class="title">
+        <h2>" ليس لدينا وقت كافٍ لقراءة كل الكتب، ولكن الوقت كافٍ لقراءة أفضل كتاب."</h2>
+    </div>
+    <div class="container" >
+        <div class="right">
+          <form >
+          
+            <label for="Name" class="right">الاســـم</label>
+            <input type="text" required placeholder="ادخـل الاســم الاول والاســم الاخــيـر">
+            <label for="Email" class="right">الايـميـل</label>
+            <input type="email" required placeholder="......@gmail.com">
+            <label for="number" class="right">الهــاتـف</label>
+            <input type="text" required placeholder="+966 50000000">
+            <label for="Message" class="right">الرسـالـة</label>
+            <textarea class="textarea" rows="2" required placeholder="الاقتراحــات أو الشـكـوى"></textarea>
+            <button type="submit" class="right">ارسـال</button>
+          </form>
+        </div>
+        <div class="right">
+            <div class="quote">
+             
+                  <img width="560" height="315" src="./img/2 (3).jpg"/>
+              
+              </div>
+        </div>
+      </div>
+      <footer>
+        <div class="footer">
+          <i class="fab fa-facebook-f"
+            >©Copyright. Designed BY  Quiet</i
+          >
+          <i class="fab fa-twitter">+9660537732578</i>
+      
+        </div>
+      </footer>
+       <script>
+        function toggleMenu() {
+            const menu_box = document.querySelector(".menu-li");
+            const navbar = document.querySelector(".navbar");
+            navbar.classList.toggle('active');
+            menu_box.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

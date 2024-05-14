@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>about</title>
+    <style>
+        .member-list-container {
+          text-align: center;
+          margin: 50px auto;
+          max-width: 600px;
+          padding: 20px;
+          border: 1px solid #493a3aed;
+          border-radius: 10px;
+          box-shadow: 0 2px 11px rgba(0, 0, 0, 0.1);
+        }
+  
+        .member-list-container h2 {
+          font-size: 24px;
+          margin-bottom: 20px;
+        }
+  
+        #member-list {
+          list-style: none;
+          padding: 0;
+        }
+  
+        #member-list li {
+          background-color: #493a3aed;
+          padding: 20px;
+          color: white;
+          margin-bottom: 5px;
+          border-radius: 10px;
+          font-size: 20px;
+          box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+.abouts {
+    padding-top: 10px;
+    padding-bottom: 50px;
+    text-align: center;
+  }
+  
+  .abouts h2 {
+    margin-bottom: 10px;
+  }
+  
+  .about {
+    display: inline-block;
+    width: 250px;
+    height: 60;
+    margin: 4px;
+    padding: 0px;
+    border: 1px solid black;
+    text-align: left;
+    border-radius: 20%;
+  }
+  
+  .sup-about {
+    padding: 20px 30px;
+    width: 250px;
+    height: 100px;
+    margin-bottom: 1px;
+    border-radius: 20%;
+  }
+  
+  .about h3 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+      </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="menu_left">
+       
+      <div class="menu_right">
+        <a href="./concat.html" class="btn-contact sm-hidden">تواصل معنا</a>
+        <button onclick="toggleMenu()" class="btn-menubar lg-hidden">
+          
+        </button>
+    </div>
+        <div class="menu-li" >
+            <ul class="menu">
+              
+                
+                <li class="menu_list">
+                    <a href="./quotes.html">الاقتباسات</a>
+                </li>
+                <li class="menu_list">
+                  <a href="./about.html">عنا</a>
+              </li>
+              <li class="menu_list">
+                <a href="./task.html"> المهام</a>
+            </li>
+              <li class="menu_list">
+                <a href="./index.html">الرئيسية</a>
+            </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="logo">
+      <img src="./img/icon/icon.jpg" alt="">
+     
+    </div>
+    
+</nav>
+
+
+    <main>
+        <section class="member-list-container">
+            <h2>فريق التطوير </h2>
+            <ul id="member-list"></ul>
+          </section>
+          
+    <div class="abouts">
+        <h2>للتواصل</h2>
+        <div class="about">
+       
+            <div class="sup-about">
+              <h3>الهاتف</h3>
+              <h3 style="background-color: #493a3aed;color:white">0537732578</h3>
+            </div>
+              
+              </div>
+
+              <div class="about">
+       
+                <div class="sup-about">
+                  <h3>الايميل</h3>
+                  <h3 style="background-color: #493a3aed;color:white">Quiet@gmail.com</h3>
+                </div>
+                  
+                  </div>
+                  <div class="about">
+       
+                    <div class="sup-about">
+                      <h3>فيس بوك</h3>
+                      <h3 style="background-color: #493a3aed;color:white">Quiet_456</h3>
+                    </div>
+                      
+                      </div>
+                      <div class="about">
+       
+                        <div class="sup-about">
+                          <h3> انستقرام</h3>
+                          <h3 style="background-color: #493a3aed;color:white">Quiet_123</h3>
+                        </div>
+                          
+                          </div>
+      </div>
+    </main>
+    <footer>
+        <div class="footer">
+          <i class="fab fa-facebook-f"
+            >©Copyright. Designed BY  Quiet</i
+          >
+          <i class="fab fa-twitter">+9660537732578</i>
+      
+        </div>
+      </footer>
+    <script>
+        function toggleMenu() {
+            const menu_box = document.querySelector(".menu-li");
+            menu_box.classList.toggle('active');
+        }
+        const imgBox = document.querySelector(".card-img");
+        const slides = imgBox.getElementsByTagName("img");
+        var i = 0;
+
+        function next() {
+            slides[i].classList.remove("active");
+            i = (i + 1) % slides.length;
+            slides[i].classList.add("active");
+        }
+
+        function previuos() {
+            slides[i].classList.remove("active");
+            textData[i].classList.remove("active");
+            i = (i - 1 + slides.length) % slides.length;
+            slides[i].classList.add("active");
+            textData[i].classList.add("active");
+        }
+
+        const textContent = document.querySelector(".text-content");
+        const textData = textContent.getElementsByTagName("div");
+        var j = 0;
+        function nexttext() {
+            textData[j].classList.remove("active");
+            j = (j + 1) % textData.length;
+            textData[j].classList.add("active");
+        }
+
+        function previuostext() {
+            textData[j].classList.remove("active");
+            j = (j - 1 + textData.length) % textData.length;
+            textData[j].classList.add("active");
+        }
+    </script>
+    <script>
+        const members = [
+          "ليان عبد الله الشهري",
+          "لينا عبدالله الشهري",
+          "ليان حسين عتعوت",
+        ];
+  
+        const memberList = document.getElementById("member-list");
+  
+        function shuffleArray(array) {
+          for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+          }
+          return array;
+        }
+  
+        function displayMembers() {
+          const shuffledMembers = shuffleArray(members);
+          memberList.innerHTML = "";
+  
+          shuffledMembers.forEach((member) => {
+            const listItem = document.createElement("li");
+            listItem.textContent = member;
+            memberList.appendChild(listItem);
+          });
+        }
+  
+        displayMembers();
+  
+        window.onload = function () {
+          displayMembers();
+        };
+      </script>
+</body>
+
+</html>

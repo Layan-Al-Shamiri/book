@@ -1,0 +1,86 @@
+<!-- صفحة الصفحة الرئيسية -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>صفحة الصفحة الرئيسية</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .category {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .category img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="category" onclick="navigateToProducts('تصنيف 1')">
+        <img src="path/to/category1.jpg" alt="تصنيف 1">
+        <h2>تصنيف 1</h2>
+    </div>
+    <div class="category" onclick="navigateToProducts('تصنيف 2')">
+        <img src="path/to/category2.jpg" alt="تصنيف 2">
+        <h2>تصنيف 2</h2>
+    </div>
+
+    <script>
+        function navigateToProducts(category) {
+            // تحويل إلى صفحة المنتجات وتمرير التصنيف كوسم
+            window.location.href = 'products.html?category=' + encodeURIComponent(category);
+        }
+    </script>
+</body>
+</html>
+
+
+
+<!-- صفحة المنتجات -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>صفحة المنتجات</title>
+</head>
+<body>
+    <h1>صفحة المنتجات</h1>
+    <div id="products"></div>
+
+    <script>
+        // استخراج قيمة التصنيف من عنوان URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+
+        // عرض التصنيف في عنوان الصفحة
+        document.title = `صفحة المنتجات - ${category}`;
+
+        // عرض جميع المنتجات التابعة للتصنيف المحدد
+        fetchProducts(category);
+
+        function fetchProducts(category) {
+            // هنا يمكنك استدعاء API لاسترداد المنتجات المتعلقة بالتصنيف
+            // يمكنك استخدام fetch أو أي أسلوب آخر لاستدعاء البيانات
+
+            // لهذا المثال، سنستخدم بيانات ثابتة
+            const productsData = [
+                { name: 'منتج 1', price: 10 },
+                { name: 'منتج 2', price: 20 },
+                { name: 'منتج 3', price: 30 }
+            ];
+
+            // عرض المنتجات في الصفحة
+            const productsContainer = document.getElementById('products');
+            productsData.forEach(product => {
+                const productElement = document.createElement('div');
+                productElement.innerHTML ='<h3>' + product.name + '</h3>' + '<p>' + product.price + '</p>';
+                productsContainer.appendChild(productElement);
+            });
+        }
+    </script>
+</body>
+</html>
